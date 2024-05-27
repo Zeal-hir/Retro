@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    <script src="scriptsignup.js" defer type="module"></script>
+    <link rel="stylesheet" href="../Css-files/signup1.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../Favicon image/favicon-32x32.png">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');  
+      #sr {
+display: none; /* Initially hidden */
+position: fixed; /* Fixed position */
+bottom: 20px; /* Position from bottom */
+right: 30px; /* Position from right */
+z-index: 99; /* Make sure it's on top of other elements */
+font-size: 18px;
+border: none;
+outline: none;
+background-color: #555; /* Set background color */
+color: white; /* Set text color */
+cursor: pointer; /* Add a pointer cursor on hover */
+padding: 15px; /* Add some padding */
+border-radius: 4px; /* Rounded corners */
+}
+
+#sr:hover {
+background-color: #333; /* Change background color on hover */
+border-radius: 100px;
+}
+.circle{
+ z-index: 998;
+ width: 20px;
+ height: 20px;
+ border-radius: 50%;
+ pointer-events: none;
+  animation: colors 5s infinite;
+  position: fixed;
+transform: translate(-50%,-50%);
+}
+.circle::before {
+  content: "";
+  position: fixed;
+width: 50px;
+height: 50px;
+opacity: 0.2;
+transform: translate(-30%,-30%);
+border-radius: 50%;
+}
+  </style>
+</head>
+<body>
+  <div class="circle-container">
+      <div class="circle" style="background-color: rgb(255, 181, 107); left: 504px; top: 59px; scale: 1;"></div>
+      <div class="circle" style="background-color: rgb(253, 175, 105); left: 504px; top: 59px; scale: 0.95;"></div>
+      <div class="circle" style="background-color: rgb(248, 157, 99); left: 504px; top: 59px; scale: 0.9;"></div>
+      <div class="circle" style="background-color: rgb(245, 151, 97); left: 504px; top: 59px; scale: 0.85;"></div>
+      <div class="circle" style="background-color: rgb(239, 134, 94); left: 504px; top: 59px; scale: 0.8;"></div>
+      <div class="circle" style="background-color: rgb(236, 128, 93); left: 504px; top: 59px; scale: 0.75;"></div>
+      <div class="circle" style="background-color: rgb(227, 110, 92); left: 504px; top: 59px; scale: 0.7;"></div>
+      <div class="circle" style="background-color: rgb(223, 104, 92); left: 504px; top: 59px; scale: 0.65;"></div>
+      <div class="circle" style="background-color: rgb(213, 88, 92); left: 504px; top: 59px; scale: 0.6;"></div>
+      <div class="circle" style="background-color: rgb(209, 82, 92); left: 504px; top: 59px; scale: 0.55;"></div>
+      <div class="circle" style="background-color: rgb(197, 65, 93); left: 504px; top: 59px; scale: 0.5;"></div>
+      <div class="circle" style="background-color: rgb(192, 59, 93); left: 504px; top: 59px; scale: 0.45;"></div>
+      <div class="circle" style="background-color: rgb(178, 44, 94); left: 504px; top: 59px; scale: 0.4;"></div>
+      <div class="circle" style="background-color: rgb(172, 38, 94); left: 504px; top: 59px; scale: 0.35;"></div>
+      <div class="circle" style="background-color: rgb(156, 21, 95); left: 504px; top: 59px; scale: 0.3;"></div>
+      <div class="circle" style="background-color: rgb(149, 15, 95); left: 504px; top: 59px; scale: 0.25;"></div>
+      <div class="circle" style="background-color: rgb(131, 0, 96); left: 504px; top: 59px; scale: 0.2;"></div>
+      <div class="circle" style="background-color: rgb(124, 0, 96); left: 504px; top: 59px; scale: 0.15;"></div>
+      <div class="circle" style="background-color: rgb(104, 0, 96); left: 504px; top: 59px; scale: 0.1;"></div>
+      <div class="circle" style="background-color: rgb(96, 0, 95); left: 504px; top: 59px; scale: 0.05;"></div>
+  </div>
+    <div class="main-login">
+        <div class="left-login">
+          <h1 style="font-family: Georgia;color: burlywood;">Sign Up Here<br>Retro Vibe is Good Vibe</h1>
+          <img style="width: 300px;height: 300px;" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxAPEA8PDxAPDw8PDw8QDw8QDg8PDw0OFREWFhUVFRUYHSggGBolHhUXITEhJykrLi8uFx80OTQtOCgtLisBCgoKDg0OFxAQGi0lICUtLS0uLy0tLSswLysrLS0tLS8rLy0tKy0tLy0rLS0tKystLS0tLS0tLS0rLS0tLS0tK//AABEIAOEA4QMBIgACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAAAAQIDBAYFBwj/xABFEAACAQICBwUFBQQHCQEAAAABAgADEQQSBQYhMUFRYRMicYGRMkJSobEUYoLB0QdykqIjJDNDU7LwNERUY3OTwuHiFv/EABoBAAIDAQEAAAAAAAAAAAAAAAQFAAIDAQb/xAAxEQABAwIDBAoDAQADAAAAAAABAAIDBBESITEFQVGBEzJhcZGhscHR8CJC4RSSsvH/2gAMAwEAAhEDEQA/APcYQhIoiEISKIhCEiiISni9IU6Wwm7fCNp8+U4uK0pUqbAci8lO3zO+YS1DI8jrwW8VO+TMaLu4jG06ftML/CNregnOrac+BPNj+Q/WcW8S8BfWvOmSOZRxjXNX30rWb3svRVA+u2QHF1Dvdz+NpBeF4MZnnUlENjY3QBKWJ3knzhEvC8riVrJ0VahG4keBIjLwvIHKEKyuNqj+8fzYn6yxS0zVG/K3itj8pz7wmjZnjQnxWbomO1A8F3aGmkPtgr1HeH6zoUa6uLowbwO0eI4TJRVYg3BII3EGxEJZWOHWF0O+iYeqbLZQmfwmmHXY/fHPcw/WdnDYlKguhvzG4jxEOjmZJogpIHx66KeEITVYohCEiiIQhIoiEISKIhCEiiIQjKtQKCzGyjaSZFEMwAJJAA2knYAJxNIaYJutLYOL8T4cvGVdI6RaqbC60xuXieplAmLKisv+LNOKZwUgH5P14J5MS8jJiFotL0dZPvEvIy0M0oZF2yfeF5HmiZpXpFMKlvC8izQzSY13CpbxbyHNHZp3pFyykvFvIs0UNLB65ZT3heRAxQZcOXLKWOp1CpDKSCNxG+Rgx00Dlwhd3AaWDWWrZW4NuVvHkZ1pjJ0tG6TKWSobpuB3lf1EYwVe5/j8/KAnpP2Z4fC0MI1WvtG0HcecdD0vRCEJFEQhCRREIQkUTGcAEk2AFyTuAmZ0pjzWaw2U1PdHxHmZZ07jrnsVOwe2eZ5eU4pMVVtT+g03pnSU9hjdruSkxpMaTELRU56PASlohaRlohMxL1eyeWjc0bmiXmeNdsn5omaMvC85jXbJ94XjbxLyuNRSXheMzQvLY1yykBjgZFeKDLB65ZTgxQ0hBjgZo165ZTgxQZEDHAzdr1WymBiyIGOBmzXKq6uitI5CEc9w7j8B/SaGYydrQmNuOyY7QO4eY5eUZ0s/6Hkl9XB+7efz8rswhCHpeiEISKIlHSmL7KmSPaPdTx5+UvTJacxXaVSB7NO6r4+8fX6CD1MvRx3Gu772Iimh6R9joMz97VRZv9c4wtGs0YzTzj3p4AnFowtGlohMGc5XATi0becLT2tWGwd0YmpW/wAGnYlf3zuX69Jisdr9jHv2QpUF4ZV7Vx+Jth/hEJg2fUTjE1thxOQ9yR3ArCSpjjNic+z7ZepXheeO/wD63SG/7U/8FH6ZZfwOv2Mp27Tsq68cydm58GSwH8JhD9i1IGRaeZ9wB5rIV0e8H7zXqcJwNAa24bGEICaNY7qVQjvn7jbm8Nh6TQRTLG+J2F4IPb989OCLY9rxdpukhHRJndWRCEJzEoiOjZx9PayYbBC1Vi1Qi60admqkcCeCjqbdLzSNr5HYWAk8AqucGi5K7V4oaeW6Q/aFinJFFKVBeFx2tT1Pd/lnMOt+kP8Ain/7dEfIJHEexqki7i0d5J/6gjzQjq6IaXP3vXs4aPDTyLA6/Y6nbOaVcce0phWI6FLW9DNnq/rvhsUVpvfD1jYBHYFHPJH3E9CAeUpLQVEIuRccRn7A+SsypjebXt3/AGy1oaPBkAaPDTJj1sQpwY5GIIINiCCDyMhBjgYS1ypZa7A4kVUDcdzDk3GWZm9C4nJUyn2alh4Nw/TzmkjuCTpGX3pNURdG+27ciEITZYKppPE9lSd+IFl/eOwTElpoNasRsp0/xn6D85m2aJtoSXfh4JzQx2jvx+hOLSMtGlowmJnlMA1PJmQ111nOH/q9A2rsLu4/uFO633z8ht4iaDSmOFCjVrNtFNC1vib3R5mw8543iazVHao5zO7FmPNibmMdlUTZnmR4u1u7ifgDM8r5ISsmMbQ1up9FXY7ybkkkkk3JJ3kniY0yanRZ2VEUs7EKqjezHcBPQtA6kUKSh8UBXqkXKXPY0zyA9/xOzpH1XWR04u/U6DefvE28ckthp3zGzV5veE9sGi8NlyfZ8PktbL2FPLbwtOBp3UbD1lLYYDD1gNii/YueRX3fFfQxdHtuFzrPaWjjr47/AF8M0Q/Zz2i7SD5LzMH5bR0M9K1D1qNe2FxLXrAHsqh31lAuVbm4G2/EA8Rt84r4d6btTqKUdGKup3qw/wBb4tCoyMroSrowZGG9WBuD6xhV0jKqPC7vB4HzyOV/kAoWGV0TrjmF72IspaE0gMVh6NcWHaUwWA2hXGx18mBEvATwbwWOLXDMZHvCegggEJYkW0ixVdaSPUc2SmjOx5KoufpK3XVnNdNZfsaClSIOJqC43EUU3ZyOJ32HQnhY+VVqjOzOzFmYkszElmPMk75b0njXxFWpXqe1UYsRvyjgo6AWHlKeUkgAEkkAAAkkncAOJnvKChbSxYf2PWPbw7hu880knmMrr7tyiMQmej6u6i01VamNHaVDtFANalT6MR7bfLx3zUporDKuVcPhgvwihTA9LQGbbkLHYWAu7dBy4+XZlmto9nvcLuNl4hEnqmmdSsLXUmiow1X3TSFqRPJqe63hY/Sea47BVKFRqVVcrobEbweRB4g7wYbR10VSDgyI3HX+rCemfF1tOK3GoetrFkweJYtfu4eqxub8Kbnj0PlynoatPn5RyuDwINiDzBns2qulTisLSqt/aAFKv/UXYT57G/FFm06QROErNDr36+efPvRtHKXjAdR6fzctArR6mVlaSq0BjciyFODNdga/aU0fiRt/eGwzHKZ3tXa/t0/Bx9D+UaUb7OtxQNbHdl+C7kIkI0SlYzWGtmxD8lCoPLafmTOUzSxpF81Wq3Oo5/mMpsZ5uqdd7j2lemhZhY0dgQTGFojGRloAUS1q4+uVB6uEqLTBYgo5UbSyK1zYcbb/ACnlxnspaUnwFAv2ho0TUvfOaSZr8723xtQbQ/zxljm3F769w9v4hamgMzg4GyzmouhSp+11VtsK0FI22O9+mzYOhPSbUNK/aQDwGpldUSF7vDgEXDTCJgYFZDSVTKitJlaBuarFqyuverrVgMVQUtVRctVF2tUpjcyjiw5byPAA+eAT3NTK9TReGd+0fD4d6l752o0me/iReM6PbBp4+jkbiA0zty7fXdmLWWVFCHuxNNlyf2c0ai4K73CvVd6QIseyIUX8CwYjobzUiNWOESVMxmldIRbESfH7rvW7GYGhvBLOTrThqlbB4inSuXalsA3tZgSo6kAjznVgZnFIY3teNQQR3g3XS3ECDvXgpG/oSDzBG8TYag6BZ6i4yotqVO5o3Ht1N2cfdG3bztym6r6Lw1R+0qUKD1PjejTZtm7aRJyZ6Cr24ZojHGzDfIm98t4GQ14m3dfMCw0OF4c43skYxhaDNImaJmtTQNTy0zGumgjikWrSF69IEW41ae/L4g7R4kcZ3y8TPC4HvheJGahSSASNLXaFeNFbEgggg2IIsQRvBHCeh/s3putCsxBCPVBp/eIWzEdNw8jOzXwNCq2apRo1GHvVKSM3qRLtM22DYBsAG4CNavaQni6MNtftvpwyHjwuN+QMGzzE/EXX5f1XUaTq0oo0nRouYUS5qtqZ0dDVctZOTEqfMbPnactDJ6NTKVb4SD6G8PhfYgoWVmJpbxW4vCFxzhH1l51ebVGuSeZJkLGSMZCxnl5cyvWtCaxkTNHMZExg4CIa1IzSItBmkLNNmtRDWqTPIK+kaNMhalWlTY7hUqIpPkTKulcU1KhWqL7SU2K8bHgZ5ozEkkkkk3JJuSeZPGH0tEJgSTYBL6+t/wAxa0NuTnr/ABew06gIBBBB2gg3BEnRp5xqbpRqdZaBJNKrcAcKdSxII5XtbzE9BRoFWUphfh8FpTVAqI8YFtxHb9+3uFeQydTKVNpZpmK5AuuCsLJBIkkgghWBCWIY6RtOBVCjYyFzJHMr1DCGC63aEx2kLPCo0yWu+lWpIlGmSpq5i7DYRTGyw5XJ+RjOmpzK8MG9XlkbDGZHbloG0nQz9n21HPe2TtUzX5WveT5549Ybpu9Tsa9SgyuS3ZVMik78uUEDyv6WjOp2eIWYg6/K3v8AeKGotof6JOjLbb9b6LTh5IrSmrSdGi0tTNzFcRpZRpSptLFMyoQ0jVdQyZTKtMywhhcaEeF2/t33os5GaEYdO5Bf5mrmPxkTS1j1y1ao+Go49GIlVotmGZTNmiheQvJ3kLwcIligcyuxk7yB5u1ENUGKpCoj0zudGQ/jBE8wII2EWIJBHIjYRPUTMNrVguyrlgO5Xu45B/fHrt/FGuz32cWcc/D+eiT7bixRtlG7I9xtbzFua5dCsabo6+0jK44XKm4+k9ZwmIWoiVFN1dQy+BF55HNhqTpUD+queJagSfNk/MefSW2nAXxh4/X0/hzQGy6gMeYzo7Tv/vmbLc0zLVOUqUu0p5WVOnKykkEjSSCAuWBSxjR8jacCqFDUMrVTJ6kqVYZGiGqvUM8z1pxvbYqoRtVLUlPMLe/8xabLWvS/2akQp/pqgKpzUcX8uHW3Webz02yqfIynuHufYc0s2rUCwhHefYe55JJvNU6GTCoTsNRmqHz2L8gJicHhTWqJSXe7WJ+Fd7HyFzPSqaBQFUWVQAByAFgIRtB9mtZxz+8/Rd2JDd75ToBbmbE+A9VOpk9MysksUxEz16Eq1TMs0zKtOWacw3oaRW6cnSVqctJCo0E9SQnQ+xGLGHROQfTNXL1gpZcRVHNgw/EAfznMaaPXChapTqc0ynxU/o3ymdMFqmWkcEVSvxxMPZ6ZHzUTCROJORI2WAHJGtKqusgdZcdZAyS7XLcOVUrOfpnRoxNJqewOO9TY+643eR3HxnWZIzJNmylpDhqFWQNe0tcMjkV5SUKkqwKspIZTvUjeIoJBBBIIIIINiCNxB4GbfWbV41x21ED7Qo7y7hXUcOjDgfLlbD8SCCCCQQQQQRvBHAz0FNUtmbibkRqOC8jU0xgfgOY3HiPnivQdV9Z1rZaNcha2wK5sFr/o3Tjw5DYU54fNFoXW/EYayv8A09Me65IdR919/rfyiiu2QXnFB/x+D7HkjYNo5YZfH5+fJesJJRMro7XbBVLB3ag3Kqpt/Gtx62ncw2lcPUF6eIw7j7tem30M8zPTTRGz2Ed4PkdD4owSsfm0hXpG8hq6QoqLtWpKObVkA+ZnHx2t+BpD+3WoeAo3q38x3R5mVihkkNmNJ7gSoZGtzJsuvUnA1h07Swi9456pHcpA949W+FevpeZvTGvdWpdcMnYqf7x7PV8h7K/OZCpULEsxLMxuzMSzMeZJ3z0VDsd5/KfIcN/MjIDjnfuQs20QBaLM8dw+eamx2MevUarUOZ28gBwUDgBKxgTNJqxq8apXEV1tSG2nTI21jwYj4Pr4b38srIGYnZAZAew+5apdDC+d+Fuu8+5+5q7qlok00NeoLVKo7gI2pS3+p2HwA6zQhZPkgEnnpJzI4vO9esp42wxhjdB9v97tLJEWTosREk6JB3PWxcn01lmmJEiydBMgblDvKlpiWqSXIA4kD1ldBOnoalmrUxybMfw7fyh0DcRAQcr8ILuC13YryhC0WeiuF5q5XL1mw2fDsRvpkVR4DY3yJPlMQZ6bUQEEEXBBBHMGed6Qwpo1Xpng1gea71PpaLa6PR3JN9mS3aY+GfL/AN9VVtGlZJC0SyCybAqApImSWysaUmGKyuHKm1OR9nL5pyM05zpFC9Vgk4+ntWaWL74PZVwNlQC4fo44+O/6TRdnFCSNqHxuD2Gx+/bIaUNkbhcLheP6T0XXwrZa9MqCbLUHepP4N+Rsekpgz216QYFWUMpFirAFWHIg75ntI6jYSrc08+Hb/lm9P+Btw6C0c0+3WEWmFu0Zjw3crpRLREZsN+w/K80gZqsV+z/FL/ZVaFUfez0m9LMPnOfV1R0ip/2Yt1WtQIPq14zj2lSv6so5nD62QjoJBq0+vouJYchFvOwuqWkT/urDxq4cD/PL+H1DxrEZzQpDjeozsPJRY+s6/aNK3rSt5OB8gSoIXnRp8LLMXj8LQqVnFOijVHPuoLkDmeAHU7JvsD+z6gtjiKtSueKqOxpn0Jb5iafCYGlQXJRppTX4UULc8zzPUxdPtyFuUQxHtyHzysETHRPd1zbzPwshoHUwUyKuKy1HG1aQ20kPAsffPTd475qCktlY3s4klq5JnYpDf27k3hYyJuFoVbs4opy0KcUU5TpEUHqFacmVI8JHqkrjupiTUWTKsAseBN4xcrNzk9RO/qxQuXqcgKY8TtP0HrOCom00ThuypIp9q2Zv3jt+W7yjqhju6/BLa+TDHbirdoR1okbJJdOImb1twN1Wuo2p3X/cJ2HyJ+fSaWR1aYYFWF1YEEHcQd4lJGB7S0rSCYxSB4XmccJa0rgDh6rIdo3o3xId3nw8pVEQTRkEgr0zXBwDhoU8CJljxHARdI1duo8kQpJQI7LBHGyriVbs4ZJZyxMszLlmSoMkXLJssMsqXKhKjAhH5YuWcuuJkCI/LEyzgK4oiImWT5YZZ3ErXUGSGST5Y7LOhxVwVAKcUJJssXLLgq4cocsXLJLRDN423Vrpto4CEeov1J4c4xhYuEroaCwfa1Rcd1O+3XkPX6GbACUdEYLsaYU+23efx5eU6AE9HTxdGyx1XnqubpZLjQafe1JCOhN0KiJFhIouXprRoxFOwsKi3NNuvI9D+kw7IVJVgQykgg7wRPTJwNYNEdsO0pj+lA7w/wAVR/5D/wBcoJVQYxiGvqmVBVdGejfpu7CskslEhEeIjljToqQRwjBJBAJIlQpbQtFEBBHRqqbaLaOhMi0qtk3LEtHwnLFcsmWi5Y6FpLKWTcsW0WE7hKlk20W0WEu1itZEaYGIYQyJWCDGQMIdFFZWRNBq5o257dxsH9mDxPxeXCU9DaMNdszXFNT3j8R+ETXqgAAAsALADcBHVHTaPdyS2uqcI6Nuu9OAiwhGaTohCEiiIQhIoiEISKLgac0IKt6tIAVd7LuFT/6mTYFSQQQQbEEWIPIielzl6W0RTxAv7FQDY4A29G5iCVFKH/k3VMqSuwWZJpuPBYkGPBkmNwVSg2WotuTDareB/wBGVwYnkhsbFOQQ4Ag5KYGOBkIMeDBXQrllLeF5GDFvB3Qrlk+8I28W8p0K5ZOiRt4XnOhUsnXi3keaF5cQLtk68CZHeJebNhXbJxMQmJeIBfYNpOwAcTCWRLtks6miNENWOZrrTB2ncW6L+suaJ1fJs9fYN4p8T+9y8JpEQAAAAACwA2ACNKaj/Z/h8pbVVwb+MeZ48O75TaVJUUKoCqosAOAksIRmkyIQhIoiEISKIhCEiiIQhIoiEISKKKtSV1KuoZTvBFxM7pHVre1A/gc/5W/X1mnhM5ImyCzgtoaiSE3YeW773WK84rUHpnLUVkbkwtfw5xgM9FrUVcZXVWXkwBE4+J1aottplqf86+h2/OAyUJ/U3TSLaUbsni3mPlZS8Lzq4jVvEL7OSoPutY+jW+s59bBVk9qlUXqUa3rugb6dw1BRzJY39VwKivFvGQvMejC0LbKS8Lxl4l5OiUTrxbxEpltigk8lBJ+Uu0NDYh91JgOb2S3rtl2wl2gVXOazrG3fl6qleJeaHC6rk7atQD7tMXPqf0nYwWiqNGxRAWHvt3mv0J3eULjonnXJBy7QiZ1c+75KzGA0LWq2NuzT4nFrjou8zT6P0VSobVGZ+Lttby5ToQh8VOyPMa/dOCVz1kkuRyHAe/FEIQm6FRCEJFEQhCRREIQkURCEJFEQhCRREIQkURCEJFEQhCRREIQnQuFc3THs+Ux2L3whAatOtndUKCdfRO8QhBoOsjKnqLY09w8I6EI3K81vKIQhOKIhCEiiIQhIoiEISKIhCEiiIQhIov/Z" class="left-login-image" alt="Retro">
+        </div>
+        <div class="right-login">
+          <div class="card-login">
+            <h1 style="font-family: Georgia;color: burlywood;">SIGN UP</h1>
+            <form id="signup-form">
+              <div class="textfield">
+                <label for="name" style="font-family: Garamond;color: black;">Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required style="font-family: Garamond;">
+              </div>
+              <div class="textfield">
+                <label for="email" style="font-family: Garamond;color: black;">Email / User Name</label>
+                <input type="email" id="email" name="email" placeholder="Enter Email / UserName" required style="font-family: Garamond;">
+              </div>
+              <div class="textfield">
+                <label for="password" style="font-family: Garamond;color: black;">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter Password" required style="font-family: Garamond;">
+              </div>
+              <button type="submit" class="btn-login" style="font-family: Garamond;color: #ddd;">Register</button>
+            </form>
+            <button id="google-login" style="font-family: Garamond;color: #ddd;">Login with Google</button>
+          </div>
+        </div>
+      </div>
+      <script>
+
+        //Custom Cursor
+    
+        const coords = { x: 0, y: 0 };
+        const circles = document.querySelectorAll(".circle");
+    
+        const colors = [
+          "#ffb56b",
+          "#fdaf69",
+          "#f89d63",
+          "#f59761",
+          "#ef865e",
+          "#ec805d",
+          "#e36e5c",
+          "#df685c",
+          "#d5585c",
+          "#d1525c",
+          "#c5415d",
+          "#c03b5d",
+          "#b22c5e",
+          "#ac265e",
+          "#9c155f",
+          "#950f5f",
+          "#830060",
+          "#7c0060",
+          "#680060",
+          "#60005f",
+          "#48005f",
+          "#3d005e"
+        ];
+    
+        circles.forEach(function (circle, index) {
+          circle.x = 0;
+          circle.y = 0;
+          circle.style.backgroundColor = colors[index % colors.length];
+        });
+    
+        window.addEventListener("mousemove", function (e) {
+          coords.x = e.clientX;
+          coords.y = e.clientY;
+    
+        });
+    
+        function animateCircles() {
+    
+          let x = coords.x;
+          let y = coords.y;
+    
+          circles.forEach(function (circle, index) {
+            circle.style.left = x - 12 + "px";
+            circle.style.top = y - 12 + "px";
+    
+            circle.style.scale = (circles.length - index) / circles.length;
+    
+            circle.x = x;
+            circle.y = y;
+    
+            const nextCircle = circles[index + 1] || circles[0];
+            x += (nextCircle.x - x) * 0.3;
+            y += (nextCircle.y - y) * 0.3;
+          });
+    
+          requestAnimationFrame(animateCircles);
+        }
+    
+        animateCircles();
+    
+    
+        // Function to toggle dark mode
+        function toggleDarkMode() {
+          const isDarkMode = isDarkModePreferred();
+          setDarkModePreference(!isDarkMode);
+          applyDarkModePreference();
+        }
+    
+        // Function to apply dark mode preference
+        function applyDarkModePreference() {
+          const isDarkMode = isDarkModePreferred();
+          if (isDarkMode) {
+            document.body.classList.add('dark-mode');
+            document.getElementById('theme-icon').src = 'assets/images/icons8-sun.svg';
+          } else {
+            document.body.classList.remove('dark-mode');
+            document.getElementById('theme-icon').src = 'assets/images/moon_solid.svg';
+          }
+        }
+    
+        // Function to set dark mode preference
+        document.addEventListener('DOMContentLoaded', () => {
+          const currentTheme = localStorage.getItem('theme');
+          const switchCheckbox = document.getElementById('switch'); // Define switchCheckbox here
+          const starRating = document.querySelector('.star_rating');
+          const thankYouMessage = document.querySelector(".thank_you_message");
+          if (switchCheckbox) { // Check if switchCheckbox is not null
+            function applyDarkModeStyles() {
+              document.body.classList.remove('light-mode');
+              document.body.classList.add('dark-mode');
+              starRating.style.backgroundColor = '#2d2828';
+              thankYouMessage.style.backgroundColor = '#2d2828';
+            }
+    
+            function applyLightModeStyles() {
+              document.body.classList.remove('dark-mode');
+              document.body.classList.add('light-mode');
+              starRating.style.backgroundColor = 'white';
+              thankYouMessage.style.backgroundColor = 'white';
+            }
+    
+            if (currentTheme) {
+              if (currentTheme === 'dark-mode') {
+                applyDarkModeStyles();
+                switchCheckbox.checked = true;
+              } else {
+                applyLightModeStyles();
+              }
+            }
+    
+            switchCheckbox.addEventListener('change', () => {
+              if (switchCheckbox.checked) {
+                applyDarkModeStyles();
+                localStorage.setItem('theme', 'dark-mode');
+              } else {
+                applyLightModeStyles();
+                localStorage.setItem('theme', 'light-mode');
+              }
+            });
+          } else {
+            console.error("Switch checkbox not found!"); // Log an error if switchCheckbox is null
+          }
+        });
+      </script>
+</body>
+</html>
