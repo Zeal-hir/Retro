@@ -45,7 +45,7 @@
   border-radius: 100px;
 }
 .circle{
-   z-index: 998;
+   z-index: 10000;
    width: 20px;
    height: 20px;
    border-radius: 50%;
@@ -101,6 +101,75 @@ body{
             --ff-philosopher: "Philosopher", sans-serif;
             --ff-poppins: "Poppins", sans-serif;
 }
+
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: hsl(20, 43%, 93%); /* Light background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 2s ease-out, visibility 2s ease-out;
+    opacity: 1;
+    visibility: visible;
+    z-index: 9999; /* Ensure the preloader is above all other content */
+}
+
+
+/* When hidden, preloader transitions out */
+#preloader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+#loader {
+    display: block;
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: hsl(304, 14%, 46%);
+    animation: spin 3s linear infinite;
+}
+
+#loader:before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: hsl(357, 37%, 62%);
+    animation: spin 3s linear infinite;
+}
+
+#loader:after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: hsl(357, 93%, 84%);
+    animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
     </style>
 </head>
 
@@ -126,6 +195,10 @@ body{
         <div class="circle" style="background-color: rgb(124, 0, 96); left: 504px; top: 59px; scale: 0.15;"></div>
         <div class="circle" style="background-color: rgb(104, 0, 96); left: 504px; top: 59px; scale: 0.1;"></div>
         <div class="circle" style="background-color: rgb(96, 0, 95); left: 504px; top: 59px; scale: 0.05;"></div>
+    </div>
+
+    <div id="preloader">
+      <div id="loader"></div>
     </div>
 
     <div class="head_container_service" style="color: black;font-family: var(--ff-philosopher);">
@@ -528,6 +601,22 @@ body{
       document.body.scrollTop = 0; // For Safari
       document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+    const preloader = document.getElementById('preloader');
+    const mainContent = document.getElementById('main-content');
+
+    // Listen for the window load event
+    window.addEventListener('load', function() {
+        // Set a delay before transitioning the preloader and main content
+        setTimeout(function() {
+            preloader.classList.add('hidden');
+            mainContent.classList.remove('hidden');
+            mainContent.classList.add('visible');
+        }, 3000); // 2000 milliseconds = 2 seconds delay
+    });
+});
     </script>
 </body>
 
