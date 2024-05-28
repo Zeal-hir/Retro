@@ -37,7 +37,7 @@ document.getElementById("signup-form").addEventListener("submit", function(event
   if (validateForm(name, email, password)) {
     // Simulate a successful registration (Replace with actual Firebase sign-up logic)
     console.log("Form submitted with:", { name, email, password });
-    window.location.href = "../login.html";
+    window.location.href = "../Html-files/signed.html";
   }
 });
 
