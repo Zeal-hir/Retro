@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fuggles&family=Mooli&family=Oswald:wght@600&family=Roboto:wght@100;300&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai|Bree+Serif&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../Css-files/content.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../Favicon image/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');  
+        #sr {
+  display: none; /* Initially hidden */
+  position: fixed; /* Fixed position */
+  bottom: 20px; /* Position from bottom */
+  right: 30px; /* Position from right */
+  z-index: 99; /* Make sure it's on top of other elements */
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: transparent; /* Set background color */
+  color: white; /* Set text color */
+  cursor: pointer; /* Add a pointer cursor on hover */
+  padding: 15px; /* Add some padding */
+  border-radius: 4px; /* Rounded corners */
+}
+
+#sr:hover {
+    color: #000; /* Change background color on hover */
+  border-radius: 100px;
+}
+.circle{
+   z-index: 10000;
+   width: 20px;
+   height: 20px;
+   border-radius: 50%;
+   pointer-events: none;
+    animation: colors 5s infinite;
+    position: fixed;
+  transform: translate(-50%,-50%);
+}
+.circle::before {
+    content: "";
+    position: fixed;
+  width: 50px;
+  height: 50px;
+  opacity: 0.2;
+  transform: translate(-30%,-30%);
+  border-radius: 50%;
+}
+body{
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg %3E%3Cpath fill='%23ffb9b0' d='M486 705.8c-109.3-21.8-223.4-32.2-335.3-19.4C99.5 692.1 49 703 0 719.8V800h843.8c-115.9-33.2-230.8-68.1-347.6-92.2C492.8 707.1 489.4 706.5 486 705.8z'/%3E%3Cpath fill='%23ffc1b7' d='M1600 0H0v719.8c49-16.8 99.5-27.8 150.7-33.5c111.9-12.7 226-2.4 335.3 19.4c3.4 0.7 6.8 1.4 10.2 2c116.8 24 231.7 59 347.6 92.2H1600V0z'/%3E%3Cpath fill='%23ffc8bf' d='M478.4 581c3.2 0.8 6.4 1.7 9.5 2.5c196.2 52.5 388.7 133.5 593.5 176.6c174.2 36.6 349.5 29.2 518.6-10.2V0H0v574.9c52.3-17.6 106.5-27.7 161.1-30.9C268.4 537.4 375.7 554.2 478.4 581z'/%3E%3Cpath fill='%23ffcfc6' d='M0 0v429.4c55.6-18.4 113.5-27.3 171.4-27.7c102.8-0.8 203.2 22.7 299.3 54.5c3 1 5.9 2 8.9 3c183.6 62 365.7 146.1 562.4 192.1c186.7 43.7 376.3 34.4 557.9-12.6V0H0z'/%3E%3Cpath fill='%23FFD6CE' d='M181.8 259.4c98.2 6 191.9 35.2 281.3 72.1c2.8 1.1 5.5 2.3 8.3 3.4c171 71.6 342.7 158.5 531.3 207.7c198.8 51.8 403.4 40.8 597.3-14.8V0H0v283.2C59 263.6 120.6 255.7 181.8 259.4z'/%3E%3Cpath fill='%23ffdcd4' d='M1600 0H0v136.3c62.3-20.9 127.7-27.5 192.2-19.2c93.6 12.1 180.5 47.7 263.3 89.6c2.6 1.3 5.1 2.6 7.7 3.9c158.4 81.1 319.7 170.9 500.3 223.2c210.5 61 430.8 49 636.6-16.6V0z'/%3E%3Cpath fill='%23ffe1d9' d='M454.9 86.3C600.7 177 751.6 269.3 924.1 325c208.6 67.4 431.3 60.8 637.9-5.3c12.8-4.1 25.4-8.4 38.1-12.9V0H288.1c56 21.3 108.7 50.6 159.7 82C450.2 83.4 452.5 84.9 454.9 86.3z'/%3E%3Cpath fill='%23ffe6df' d='M1600 0H498c118.1 85.8 243.5 164.5 386.8 216.2c191.8 69.2 400 74.7 595 21.1c40.8-11.2 81.1-25.2 120.3-41.7V0z'/%3E%3Cpath fill='%23ffebe4' d='M1397.5 154.8c47.2-10.6 93.6-25.3 138.6-43.8c21.7-8.9 43-18.8 63.9-29.5V0H643.4c62.9 41.7 129.7 78.2 202.1 107.4C1020.4 178.1 1214.2 196.1 1397.5 154.8z'/%3E%3Cpath fill='%23FFF0EA' d='M1315.3 72.4c75.3-12.6 148.9-37.1 216.8-72.4h-723C966.8 71 1144.7 101 1315.3 72.4z'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: cover;
+  background-attachment: fixed;
+}
+::-webkit-scrollbar {
+  width: 10px; /* Width of the scrollbar */
+}
+::-webkit-scrollbar-track {
+  background-color: #feaea5; /* Color of the track */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: linear-gradient(
+    to bottom,
+    hsl(357, 37%, 62%),
+    hsl(304, 14%, 46%)
+  );
+  border-radius: 6px; /* Rounded corners of the thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(172, 38, 94); /* Color of the thumb on hover */
+}
+
+* {
+  scrollbar-width: thick; /* Width of the scrollbar */
+}
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+:root{
+            --ff-philosopher: "Philosopher", sans-serif;
+            --ff-poppins: "Poppins", sans-serif;
+}
+
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: hsl(20, 43%, 93%); /* Light background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 2s ease-out, visibility 2s ease-out;
+    opacity: 1;
+    visibility: visible;
+    z-index: 9999; /* Ensure the preloader is above all other content */
+}
+
+
+/* When hidden, preloader transitions out */
+#preloader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+#loader {
+    display: block;
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: hsl(304, 14%, 46%);
+    animation: spin 3s linear infinite;
+}
+
+#loader:before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: hsl(357, 37%, 62%);
+    animation: spin 3s linear infinite;
+}
+
+#loader:after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: hsl(357, 93%, 84%);
+    animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+    </style>
+  <style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+.container{
+    justify-content: center;
+    position: absolute;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    top: 50%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    width: 900px;
+    height: 600px;
+    background: transparent;
+    box-shadow: 0 30px 50px #dbdbdb;
+}
+
+.container .slide .item{
+    width: 200px;
+    height: 300px;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    border-radius: 20px;
+    box-shadow: 0 30px 50px #505050;
+    background-position: 50% 50%;
+    background-size: cover;
+    display: inline-block;
+    transition: 0.5s;
+}
+
+.slide .item:nth-child(1),
+.slide .item:nth-child(2){
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+.slide .item:nth-child(3){
+    left: 50%;
+}
+.slide .item:nth-child(4){
+    left: calc(50% + 220px);
+}
+.slide .item:nth-child(5){
+    left: calc(50% + 440px);
+}
+
+/* here n = 0, 1, 2, 3,... */
+.slide .item:nth-child(n + 6){
+    left: calc(50% + 660px);
+    opacity: 0;
+}
+
+
+
+.item .content{
+    position: absolute;
+    top: 50%;
+    left: 100px;
+    width: 300px;
+    text-align: left;
+    color: rgb(219, 13, 13);
+    transform: translate(0, -50%);
+    font-family: var(--ff-philosopher);
+    display: none;
+}
+
+
+.slide .item:nth-child(2) .content{
+    display: block;
+}
+
+
+.content .name{
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: bold;
+    opacity: 0;
+    animation: animate 1s ease-in-out 1 forwards;
+}
+
+.content .des{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: animate 1s ease-in-out 0.3s 1 forwards;
+}
+
+.content button{
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0;
+    animation: animate 1s ease-in-out 0.6s 1 forwards;
+}
+
+
+@keyframes animate {
+    from{
+        opacity: 0;
+        transform: translate(0, 100px);
+        filter: blur(33px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translate(0);
+        filter: blur(0);
+    }
+}
+
+
+
+.button{
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 20px;
+}
+
+.button button{
+    width: 40px;
+    height: 35px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    margin: 0 5px;
+    border: 1px solid #000;
+    transition: 0.3s;
+}
+
+.button button:hover{
+    background: #ababab;
+    color: #fff;
+}
+  </style>
+  <style>
+
+.head_container:before {
+  content: "";
+  position: absolute;
+  height: 238px;
+  width: 100%;
+  opacity: 0.4;
+  z-index: -1;
+  
+}
+
+.head_container_service{
+  height:30px;
+}
+.head_container_service:before {
+  background-color: hsl(20, 43%, 93%);
+  background-blend-mode: multiply;
+  height: 10px;
+  width: 10px;
+  content: "";
+  position: absolute;
+  height: 500px;
+  width: 100%;
+  opacity: 0.4;
+  z-index: -1;
+  
+}
+
+.navbar {
+  padding: 8px 10px;
+}
+.navbar ul {
+  overflow: hidden;
+}
+
+.navbar li {
+  float: left;
+  list-style: none;
+  padding: 8px 20px;
+}
+.navbar li:hover {
+  opacity: 0.7;
+}
+
+.navbar li a {
+  padding: 3px 3px;
+  text-decoration: none;
+  color: white;
+  font-size: 1.3rem;
+}
+/* Styling for the contact navbar */
+.navbarbg {
+  padding: 8px 0;
+  background-color: hsl(20, 43%, 93%); /* Maroon background color */
+  text-align: center; /* Align contents to center */
+}
+
+/* Styling for the list items */
+.navbarbg ul {
+  display: inline-block; /* Ensure the list is displayed horizontally */
+  padding-left: 0; /* Remove default padding */
+}
+
+/* Styling for the list items */
+.navbarbg li {
+  display: inline-block; /* Display list items horizontally */
+  list-style: none;
+  margin: 0 10px; /* Add some space between items */
+}
+
+/* Styling for the links */
+.navbarbg li a {
+  padding: 5px 10px;
+  text-decoration: none;
+  color: white;
+  font-size: 1.3rem;
+}
+
+/* Hover effect for list items */
+.navbarbg li:hover {
+  opacity: 0.7;
+}
+
+
+.menu_container {
+  padding: 55px 70px 30px 70px;
+  background-color: hsl(20, 43%, 93%);
+}
+.menu_container h2 {
+  font-family: Georgia;
+  font-size: 2rem;
+  color:rgb(138, 37, 37);
+  padding-left: 50px;
+}
+.mainhead {
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 50px;
+}
+.mainhead h1 {
+  font-family: Georgia;
+  font-size: 3.8rem;
+  color: white;
+  padding-bottom: 20px;
+}
+.head_container_service .mainhead {
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 210px;
+}
+
+/* .mainhead p {
+  font-size: 1.2rem;
+  color: brown;
+  font-family: "Bree Serif", serif;
+  margin: 15px 10px;
+} */
+
+.but {
+  border: 1.3px solid brown;
+  font-size: 1.1rem;
+  padding: 3px 25px;
+  border-radius: 4px;
+  font-family: "Bree Serif", serif;
+  color: brown;
+  background-color: hsl(20, 43%, 93%);
+}
+.butt {
+  border: 1.3px solid brown;
+  font-size: 1.1rem;
+  padding: 3px 63px 5px 63px;
+  border-radius: 4px;
+  font-family: "Bree Serif", serif;
+  margin-top: 8px;
+  background-color: brown;
+  color: white;
+}
+
+.butt:hover {
+  background-color: hsl(304, 14%, 46%);
+}
+
+.menu_items {
+  display: flex;
+  justify-content: center;
+}
+
+.menu_items .items {
+  background-color: #f2f2f2;
+  /* border: 2px solid brown;
+  box-shadow: 0 0 10px rgba(138, 37, 37, 0.5); */
+  box-shadow: 0 0 10px rgba(224, 224, 252, 0.678);
+  border: 1px solid rgb(186, 186, 201);
+  padding: 40px;
+  margin: 5px;
+  height: 310px;
+  width: 230px;
+  border-radius: 10px;
+  text-align: center;
+  font-family: "Bree Serif", serif;
+}
+
+.menu_items .items img {
+  justify-content: center;
+  height: 190px;
+  width: 230px;
+}
+
+.menu_items .items h3 {
+  font-size: 1.1rem;
+  margin-top: 10px;
+}
+
+.menu_items .items p {
+  margin-bottom: 20px;
+}
+
+.first_cont {
+  display: flex;
+  justify-content: center;
+}
+
+.first_cont .items {
+  background-color: hsl(20, 43%, 93%);
+  border: 3px solid rgba(138, 37, 37);
+  box-shadow: 0 0 20px rgba(138, 37, 37, 0.5);
+  padding: 25px 10px;
+  margin: 15px;
+  height: 270px;
+  width: 230px;
+  border-radius: 10px;
+  text-align: center;
+  font-family: "Bree Serif", serif;
+}
+
+.first_cont .items img {
+  justify-content: center;
+  height: 160px;
+  width: 200px;
+
+}
+
+.first_cont .items h3 {
+  font-size: 1.2rem;
+  margin: 10px ;
+}
+
+.first_cont .items p {
+  margin-bottom: 20px;
+}
+
+/* service */
+.service_container {
+  background-color: transparent;
+  background-blend-mode:lighten;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.second_cont{
+  display: flex;
+  padding: 40px;
+  justify-content: center;
+}
+.second_cont1{
+  display: flex;
+  padding: 0px 20px 100px 20px;
+  justify-content: center;
+}
+
+.deals{
+  display: flex;
+  background-color: hsl(20, 43%, 93%);
+  border: 2px solid rgb(138, 37, 37);
+  /* box-shadow: 0 0 10px rgba(138, 37, 37, 0.5); */
+  border-radius: 10px;
+  padding:15px 30px;
+  margin:20px 50px;
+}
+
+.deals p{
+  font-size: 1.1rem;
+  /* font-weight: bold; */
+  padding-top: 2px;
+  font-family: "Bree Serif", serif;
+}
+.deals i{
+  margin: 0px 10px;
+  padding: 0px 10px;
+  font-size: 2rem;
+}
+
+/* testimonal */
+.testimonalsection{
+  padding-top: 400px;
+}
+.testimonal__container{
+  display: flex;
+  padding: 3rem;
+}
+.testimonal__card{
+  text-align: center;
+  padding:2rem 3rem 2.5rem;
+  border:2px solid rgba(224, 224, 252, 0.678);
+  transition:border .4s,background-color .4s;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(224, 224, 252, 0.678);
+  border: 1px solid rgb(186, 186, 201);
+  padding:40px 30px ;
+  margin: 5px;
+  color:rgb(107, 107, 122);
+}
+.testimonal__image{
+  width:100px;
+  height:100px;
+  border-radius:50%;
+  margin:0 auto 1.5rem;
+}
+.testimonal__title{
+  margin-bottom: .75rem;
+}
+.testimonal__description{
+  margin-bottom: 1.25rem;
+}
+.section__title{
+  text-align: center;
+  font-size: 2rem;
+  color:rgb(58, 58, 66);
+}
+
+/* footer */
+.foot-panel2{
+    background-color: transparent;
+    color:white;
+    height: 300px;
+    display: flex;
+    justify-content: space-evenly;
+    /* margin-top: 50px; */
+}
+
+.footer-colums{
+    margin-top: 20px;
+}
+
+.footer-colums p{
+    font-weight: 700;
+}
+
+.footer-colums a{
+    display: block;
+    font-size: 0.85rem;
+    margin-top: 10px;
+    color: #dddddd;
+}
+
+.foot_panel4{
+    background-color: transparent;
+    color: white;
+    height: 160px;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.pages{
+    padding-top: 25px;
+}
+
+.copyright{
+   padding-top: 10px;
+}
+
+form {
+    padding-top: 20px;
+    display: grid;
+    padding-bottom: 100px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input,
+textarea {
+    height:30px;
+    width: 120%;
+    padding: 2.5px;
+    box-sizing: border-box;
+    border-radius: 2px;
+}
+
+#butt{
+    background-color:rgb(66, 16, 16);
+    border-radius: 10px;
+    color: white;
+    border: 1px solid white ;
+    cursor: pointer;
+}
+
+#butt :hover {
+    background-color:hsl(304, 14%, 46%);
+}
+
+.social-icons a{
+    font-size: 1.2rem;
+    padding: 15px;
+    text-decoration: none;
+    color: white;
+}
+
+.fa-facebook:hover {
+  color:#3B5998;
+}
+
+.fa-instagram:hover {
+  color:#D62976;
+}
+
+.fa-twitter:hover {
+  color:#00B6F1;
+}
+#bill{
+  color: rgb(196, 74, 74);
+}
+.menu_items .items {
+  position: relative;
+  /* Ensure relative positioning for the parent container */
+}
+  </style>
+  <style>
+
+#first_cont{
+    padding-top: 30px;
+  padding-bottom: 50px;
+  height:300px;
+}
+#first_cont:before {
+  background-color: hsl(20, 43%, 93%);
+  background-blend-mode: multiply;
+  height: 10px;
+  width: 10px;
+  content: "";
+  position: absolute;
+  height: 500px;
+  width: 100%;
+  opacity: 0.4;
+  z-index: -2;
+  
+}
+  </style>
+  <style>
+    .see{
+        background-color: rgb(244, 5, 5);
+        color: white;
+        border-radius: 10px;
+        font-family: var(--ff-philosopher);
+    }
+    .see:hover{
+        background-color: hsl(304, 14%, 46%);
+    }
+  </style>
+  <title>Day30</title>
+</head>
+<body>
+    <div class="circle-container">
+        <div class="circle" style="background-color: rgb(255, 181, 107); left: 504px; top: 59px; scale: 1;"></div>
+        <div class="circle" style="background-color: rgb(253, 175, 105); left: 504px; top: 59px; scale: 0.95;"></div>
+        <div class="circle" style="background-color: rgb(248, 157, 99); left: 504px; top: 59px; scale: 0.9;"></div>
+        <div class="circle" style="background-color: rgb(245, 151, 97); left: 504px; top: 59px; scale: 0.85;"></div>
+        <div class="circle" style="background-color: rgb(239, 134, 94); left: 504px; top: 59px; scale: 0.8;"></div>
+        <div class="circle" style="background-color: rgb(236, 128, 93); left: 504px; top: 59px; scale: 0.75;"></div>
+        <div class="circle" style="background-color: rgb(227, 110, 92); left: 504px; top: 59px; scale: 0.7;"></div>
+        <div class="circle" style="background-color: rgb(223, 104, 92); left: 504px; top: 59px; scale: 0.65;"></div>
+        <div class="circle" style="background-color: rgb(213, 88, 92); left: 504px; top: 59px; scale: 0.6;"></div>
+        <div class="circle" style="background-color: rgb(209, 82, 92); left: 504px; top: 59px; scale: 0.55;"></div>
+        <div class="circle" style="background-color: rgb(197, 65, 93); left: 504px; top: 59px; scale: 0.5;"></div>
+        <div class="circle" style="background-color: rgb(192, 59, 93); left: 504px; top: 59px; scale: 0.45;"></div>
+        <div class="circle" style="background-color: rgb(178, 44, 94); left: 504px; top: 59px; scale: 0.4;"></div>
+        <div class="circle" style="background-color: rgb(172, 38, 94); left: 504px; top: 59px; scale: 0.35;"></div>
+        <div class="circle" style="background-color: rgb(156, 21, 95); left: 504px; top: 59px; scale: 0.3;"></div>
+        <div class="circle" style="background-color: rgb(149, 15, 95); left: 504px; top: 59px; scale: 0.25;"></div>
+        <div class="circle" style="background-color: rgb(131, 0, 96); left: 504px; top: 59px; scale: 0.2;"></div>
+        <div class="circle" style="background-color: rgb(124, 0, 96); left: 504px; top: 59px; scale: 0.15;"></div>
+        <div class="circle" style="background-color: rgb(104, 0, 96); left: 504px; top: 59px; scale: 0.1;"></div>
+        <div class="circle" style="background-color: rgb(96, 0, 95); left: 504px; top: 59px; scale: 0.05;"></div>
+    </div>
+
+    <div id="preloader">
+      <div id="loader"></div>
+    </div>
+
+    <div class="head_container_service" style="color: black;font-family: var(--ff-philosopher);">
+        <header style="font-family: var(--ff-philosopher);">
+            <nav class="navbar">
+                <ul id="header-items" style="color: black;font-family: var(--ff-philosopher);justify-content: center;">
+                    <li><a href="../Home.html" style="color: black;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Home</a></li>
+                    <li><a href="menu.html" style="color: black;">About</a></li>
+                    <li><a href="services.html" style="color: black;">Services</a></li>
+                    <li><a href="contact.html" style="color: black;">Contact us</a></li>
+                    <li><a href="cart.html" style="color: black;">Cart</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+     <div><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;
+       <span style="font-size: 2rem;letter-spacing: 0.5rem;font-family: var(--ff-philosopher);transform: rotate(-270deg);float: right;"> 
+         Electronics </span>
+    </div>
+    <br><br>
+    <div>
+    <div id="first_cont">
+    <div class="container" style="float: left;">
+
+        <div class="slide">
+
+            
+            <div class="item" style="background-image: url(https://tse3.mm.bing.net/th?id=OIP.F4FryzjU6mzE4LeTsda4nQHaHa&pid=Api&P=0&h=180);">
+                <div class="content">
+                    <div class="name">Switzerland</div>
+                    <div class="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!</div>
+                    <button class="see">See More</button>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(https://i.pinimg.com/236x/73/cd/69/73cd696eda446b8080ec17dafb61afad.jpg);">
+                <div class="content">
+                    <div class="name">Finland</div>
+                    <div class="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!</div>
+                    <button class="see">See More</button>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(https://i.pinimg.com/236x/cb/25/b3/cb25b3b69692b415867b69f13ff28126.jpg);">
+                <div class="content">
+                    <div class="name">Iceland</div>
+                    <div class="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!</div>
+                    <button class="see">See More</button>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(https://i.pinimg.com/236x/46/bb/5c/46bb5c5c9f1e5f7630847ec2a88881ac.jpg);">
+                <div class="content">
+                    <div class="name">Australia</div>
+                    <div class="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!</div>
+                    <button class="see">See More</button>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(https://i.pinimg.com/236x/be/03/ef/be03efdd5600fb34fabdc4acea3f2d6b.jpg);">
+                <div class="content">
+                    <div class="name">Netherland</div>
+                    <div class="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!</div>
+                    <button class="see">See More</button>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(https://i.pinimg.com/236x/ee/9b/7d/ee9b7d7495ee8029d05daa1741956682.jpg);">
+                <div class="content">
+                    <div class="name">Ireland</div>
+                    <div class="des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!</div>
+                    <button class="see">See More</button>
+                </div>
+            </div>
+            <div class="item" style="background-image: url(https://i.pinimg.com/236x/34/72/cf/3472cf5797b3b6cbd9ab71145edde6e2.jpg);">
+                <div class="content">
+                    <div class="name">Ice</div>
+                    <div class="des">xfcgvhbjn</div>
+                    <button class="see">See More</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="button">
+            <button class="prev"><i class="fa-solid fa-arrow-left"></i></button>
+            <button class="next"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+
+    </div>
+  </div>
+  </div>
+    <footer style="margin-top: 50px;">
+
+
+        <div class="foot-panel2" style="font-family: Garamond;">
+            <ul class="footer-colums">
+                <p style="font-family: var(--ff-philosopher);color: hsl(203, 30%, 26%);">Our Pages</p>
+                <a href="../index.html" style="text-decoration: none;font-family: var(--ff-poppins);color: hsl(208, 7%,46%);">Home</a>
+                <a href="menu.html" style="text-decoration: none;font-family: var(--ff-poppins);color: hsl(208, 7%,46%);">About</a>
+                <a href="services.html" style="text-decoration: none;font-family: var(--ff-poppins);color: hsl(208, 7%,46%);">Services</a>
+                <a href="contact.html" style="text-decoration: none;font-family: var(--ff-poppins);color: hsl(208, 7%,46%);">Contact</a>
+                <a href="cart.html" style="text-decoration: none;font-family: var(--ff-poppins);color: hsl(208, 7%,46%);">Cart</a>
+            </ul>
+
+            <ul class="footer-colums">
+                <p style="font-family: var(--ff-philosopher);color: hsl(203, 30%, 26%);"> Exclusive Offers</p>
+                <a style="font-family: var(--ff-poppins);color: hsl(208, 7%,46%);">Retro Discounts</a>
+                <a style="font-family: var(--ff-poppins);color: hsl(208, 7%,46%);">Limited-Time Promotions</a>
+                <a style="font-family: var(--ff-poppins);color: hsl(208, 7%,46%);">Special Event Packages</a>
+                <a style="font-family: var(--ff-poppins);color: hsl(208, 7%,46%);">Membership Benefits</a>
+                <a style="font-family: var(--ff-poppins);color: hsl(208, 7%,46%);">Early Access to New Collections</a>
+                <a style="font-family: var(--ff-poppins);color: hsl(208, 7%,46%);">VIP Retro Events</a>
+                <a style="font-family: var(--ff-poppins);color: hsl(208, 7%,46%);">Personalized Culinary Experiences</a>
+
+            </ul>
+
+            <ul class="footer-colums">
+                <p style="font-family: var(--ff-philosopher);color: hsl(203, 30%, 26%);">Payment Products</p>
+                <a style="font-family: var(--ff-poppins);color: hsl(208, 7%,46%);">Secure Checkout</a>
+                <a style="font-family: var(--ff-poppins);color: hsl(208, 7%,46%);">Credit/Debit Cards</a>
+                <a style="font-family: var(--ff-poppins);color: hsl(208, 7%,46%);">Online Payment</a>
+                <a style="font-family: var(--ff-poppins);color: hsl(208, 7%,46%);">Mobile Wallets</a>
+                <a style="font-family: var(--ff-poppins);color: hsl(208, 7%,46%);">Contactless Payments</a>
+            </ul>
+
+
+            <form id="contactForm">
+                <h3 style="font-family: var(--ff-philosopher);color: hsl(203, 30%, 26%);">Contact Us!</h3>
+                <!-- <label for="name">Name:</label> -->
+                <!-- <input type="text" id="name" name="name" placeholder="Your Name" required>
+                 -->
+                <!-- <label for="email">Email:</label> -->
+                <input type="email" id="email" name="email" placeholder="Your Email" required style="font-family: var(--ff-poppins);color: hsl(208, 7%,46%);">
+
+                <!-- <label for="message">Message:</label> -->
+                <textarea id="message" name="message" placeholder="Your Message" required style="font-family: var(--ff-poppins);color: hsl(208, 7%,46%);"></textarea>
+
+                <button id="butt" type="submit" style="font-family: var(--ff-poppins);color: hsl(208, 7%,46%);">Send Message</button>
+            </form>
+
+        </div>
+
+
+        <div class="foot_panel4"  style="font-family: Garamond;">
+            <div class="pages">
+                <h4 style="font-family: var(--ff-philosopher);color: hsl(203, 30%, 26%);">Follow Us</h4>
+
+                <div class="social-icons">
+                    <div class="social-icons">
+                        <a class="fa-brands fa-facebook" href="https://facebook.com" target="_blank"></a>
+                        <a class="fa-brands fa-instagram" href="https://instagram.com" target="_blank"></a>
+                        <a class="fa-brands fa-twitter" href="https://twitter.com" target="_blank"></a>
+                    </div>
+                </div>
+                <p style="margin-bottom:0;font-family: var(--ff-philosopher);color: hsl(203, 30%, 26%);">Stay connected with us on social media for the latest updates, latest collection, and vintage adventures.
+                </p>
+                <div class="copyright">
+                   <p style="font-family: var(--ff-philosopher);color: hsl(203, 30%, 26%);">
+                    &copy; 2024 Retro . All Rights Reserved. | <span id="author">
+                        <a href="https://www.linkedin.com/in/khushi-joshi-95a587256/" target="_blank" style="text-decoration: none;">Retro Team</a>
+                    </span></p>
+
+                  
+
+
+                </div>
+                <div>
+                    <button id="sr" style="z-index: 1000;">
+                    <div class="circle1">
+                      <svg id="back-to-top" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-up-circle-fill" viewBox="0 0 16 16">
+                        <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0m-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707z"></path>
+                      </svg>
+                    </div>
+                    </button>
+                </div>
+            </div>
+    </footer>
+
+    <script>
+
+        //Custom Cursor
+    
+        const coords = { x: 0, y: 0 };
+        const circles = document.querySelectorAll(".circle");
+    
+        const colors = [
+          "#ffb56b",
+          "#fdaf69",
+          "#f89d63",
+          "#f59761",
+          "#ef865e",
+          "#ec805d",
+          "#e36e5c",
+          "#df685c",
+          "#d5585c",
+          "#d1525c",
+          "#c5415d",
+          "#c03b5d",
+          "#b22c5e",
+          "#ac265e",
+          "#9c155f",
+          "#950f5f",
+          "#830060",
+          "#7c0060",
+          "#680060",
+          "#60005f",
+          "#48005f",
+          "#3d005e"
+        ];
+    
+        circles.forEach(function (circle, index) {
+          circle.x = 0;
+          circle.y = 0;
+          circle.style.backgroundColor = colors[index % colors.length];
+        });
+    
+        window.addEventListener("mousemove", function (e) {
+          coords.x = e.clientX;
+          coords.y = e.clientY;
+    
+        });
+    
+        function animateCircles() {
+    
+          let x = coords.x;
+          let y = coords.y;
+    
+          circles.forEach(function (circle, index) {
+            circle.style.left = x - 12 + "px";
+            circle.style.top = y - 12 + "px";
+    
+            circle.style.scale = (circles.length - index) / circles.length;
+    
+            circle.x = x;
+            circle.y = y;
+    
+            const nextCircle = circles[index + 1] || circles[0];
+            x += (nextCircle.x - x) * 0.3;
+            y += (nextCircle.y - y) * 0.3;
+          });
+    
+          requestAnimationFrame(animateCircles);
+        }
+    
+        animateCircles();
+    
+    
+        // Function to toggle dark mode
+        function toggleDarkMode() {
+          const isDarkMode = isDarkModePreferred();
+          setDarkModePreference(!isDarkMode);
+          applyDarkModePreference();
+        }
+    
+        // Function to apply dark mode preference
+        function applyDarkModePreference() {
+          const isDarkMode = isDarkModePreferred();
+          if (isDarkMode) {
+            document.body.classList.add('dark-mode');
+            document.getElementById('theme-icon').src = 'assets/images/icons8-sun.svg';
+          } else {
+            document.body.classList.remove('dark-mode');
+            document.getElementById('theme-icon').src = 'assets/images/moon_solid.svg';
+          }
+        }
+    
+        // Function to set dark mode preference
+        document.addEventListener('DOMContentLoaded', () => {
+          const currentTheme = localStorage.getItem('theme');
+          const switchCheckbox = document.getElementById('switch'); // Define switchCheckbox here
+          const starRating = document.querySelector('.star_rating');
+          const thankYouMessage = document.querySelector(".thank_you_message");
+          if (switchCheckbox) { // Check if switchCheckbox is not null
+            function applyDarkModeStyles() {
+              document.body.classList.remove('light-mode');
+              document.body.classList.add('dark-mode');
+              starRating.style.backgroundColor = '#2d2828';
+              thankYouMessage.style.backgroundColor = '#2d2828';
+            }
+    
+            function applyLightModeStyles() {
+              document.body.classList.remove('dark-mode');
+              document.body.classList.add('light-mode');
+              starRating.style.backgroundColor = 'white';
+              thankYouMessage.style.backgroundColor = 'white';
+            }
+    
+            if (currentTheme) {
+              if (currentTheme === 'dark-mode') {
+                applyDarkModeStyles();
+                switchCheckbox.checked = true;
+              } else {
+                applyLightModeStyles();
+              }
+            }
+    
+            switchCheckbox.addEventListener('change', () => {
+              if (switchCheckbox.checked) {
+                applyDarkModeStyles();
+                localStorage.setItem('theme', 'dark-mode');
+              } else {
+                applyLightModeStyles();
+                localStorage.setItem('theme', 'light-mode');
+              }
+            });
+          } else {
+            console.error("Switch checkbox not found!"); // Log an error if switchCheckbox is null
+          }
+        });
+      </script>
+      <script>
+        function redirectLogin() {
+            window.location.href = "Html-files/login.html";
+        }
+        function redirectSignup() {
+            window.location.href = "Html-files/signup.html";
+        }
+    
+        // Get the button element
+    const scrollToTopBtn = document.getElementById("sr");
+    
+    // Show the button when the user scrolls down 20px from the top of the document
+    window.onscroll = function() {
+      scrollFunction();
+    };
+    
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        scrollToTopBtn.style.display = "block";
+      } else {
+        scrollToTopBtn.style.display = "none";
+      }
+    }
+    
+    // Scroll to the top of the document when the button is clicked
+    scrollToTopBtn.addEventListener("click", function() {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+    const preloader = document.getElementById('preloader');
+    const mainContent = document.getElementById('main-content');
+
+    // Listen for the window load event
+    window.addEventListener('load', function() {
+        // Set a delay before transitioning the preloader and main content
+        setTimeout(function() {
+            preloader.classList.add('hidden');
+            mainContent.classList.remove('hidden');
+            mainContent.classList.add('visible');
+        }, 3000); // 2000 milliseconds = 2 seconds delay
+    });
+});
+    </script>
+    <script>
+        let next = document.querySelector('.next')
+let prev = document.querySelector('.prev')
+
+next.addEventListener('click', function(){
+    let items = document.querySelectorAll('.item')
+    document.querySelector('.slide').appendChild(items[0])
+})
+
+prev.addEventListener('click', function(){
+    let items = document.querySelectorAll('.item')
+    document.querySelector('.slide').prepend(items[items.length - 1]) // here the length of items = 6
+})
+    </script>
+</body>
+</html>
